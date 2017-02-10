@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSON TESTER</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+
+  </head>
+  <body>
+<h1>JSON TESTER:</h1>
+  <pre id="message">
+  NO JSON GOTTEN YET!
+  </pre>
+	<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script> -->
+	<script type="text/javascript" src="http://maps.google.cn/maps/api/js?sensor=false&language=zh"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	
+	<script>
+		// http://maps.google.com/maps/api/geocode/json?language=zh-CN&latlng=31.213766,121.465942
+	
+		new google.maps.Geocoder().geocode({
+		'latLng'  : new google.maps.LatLng(31.213766,121.465942),
+		'language': 'cn'}, 
+		//'language': 'en'}, 
+		function(results, status) {
+			$('#message').text(JSON.stringify(results, null, '\t')); // When used with the <pre> tag it will pretty-print JSON
+		}
+	);
+	</script>
+
+</body>
+</html>
